@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypripod
+spec:
+  imagePullSecrets:
+    - name: my1-cred
+  containers:
+  - name: myapp
+    image: iishitajain/myapache2_code
+    ports:
+      - containerPort: 80

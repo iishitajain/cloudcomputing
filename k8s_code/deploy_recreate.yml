@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jecrcdep
+spec:
+  replicas: 10
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      color : red
+  template:
+    metadata:
+      labels:
+        color : red
+    spec:
+      containers:
+      - name: jecrc-c1
+        image: httpd       
+        ports:
+        - containerPort: 80
